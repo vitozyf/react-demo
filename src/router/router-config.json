@@ -1,0 +1,31 @@
+{
+  "config": [
+    {
+      "path":  "/about",
+      "name":  "AboutOur",
+      "title": "关于"
+    },
+    {
+      "path":  "/movie",
+      "name":  "Movie",
+      "title": "电影"
+    },
+    {
+      "path":  "/list",
+      "name":  "List",
+      "title": "列表",
+      "children": [
+        {
+          "path":  "/listOne",
+          "name":  "ListOne",
+          "title": "列表1"
+        },
+        {
+          "path":  "/listTwo",
+          "name":  "ListTwo",
+          "title": "列表2"
+        }
+      ]
+    }
+  ]
+}
