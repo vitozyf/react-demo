@@ -1,8 +1,9 @@
 import React from 'react';
-import CreatRouter from  './router'
+// import CreatRouter from  './router'
 import './App.css';
 import Component from  'utils/Component'
-import './utils/antd'
+import 'utils/antd'
+import AppLayout from 'layout/index'
 
 class App extends Component {
   constructor () {
@@ -16,7 +17,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CreatRouter></CreatRouter>
+        {/*<CreatRouter></CreatRouter>*/}
+        <AppLayout></AppLayout>
       </div>
     );
   }

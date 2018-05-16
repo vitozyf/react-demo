@@ -3,17 +3,20 @@
     {
       "path":  "/about",
       "name":  "AboutOur",
-      "title": "关于"
+      "title": "关于",
+      "icon": "pie-chart"
     },
     {
       "path":  "/movie",
       "name":  "Movie",
-      "title": "电影"
+      "title": "电影",
+      "icon": "desktop"
     },
     {
       "path":  "/list",
       "name":  "List",
       "title": "列表",
+      "icon": "inbox",
       "children": [
         {
           "path":  "/listOne",

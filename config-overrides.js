@@ -5,7 +5,11 @@ const { injectBabelPlugin } = require("react-app-rewired")
 const AliasConfig = {
   src: resolve('src'),
   components: resolve('src/components'),
-  utils: resolve('src/utils')
+  utils: resolve('src/utils'),
+  '~router': resolve('src/router'),
+  'router': resolve('src/router'),
+  '~layout': resolve('src/layout'),
+  'layout': resolve('src/layout'),
 }
 
 module.exports = function override(config, env) {
