@@ -12,9 +12,17 @@ const AliasConfig = {
   'layout': resolve('src/layout'),
 }
 
+// const Rules = [
+//   {
+//     test: /\.scss$/,
+//     loaders: ['style-loader', 'css-loader', 'sass-loader']
+//   }
+// ]
+
 module.exports = function override(config, env) {
   //do stuff with the webpack config...
   extend(config.resolve.alias, AliasConfig)
+  // config.module.rules = config.module.rules.concat(Rules)
 
   config = injectBabelPlugin(['import', { 
     libraryName: 'antd', 

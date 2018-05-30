@@ -7,12 +7,6 @@
       "icon": "pie-chart"
     },
     {
-      "path":  "/movie",
-      "name":  "Movie",
-      "title": "电影",
-      "icon": "desktop"
-    },
-    {
       "path":  "/list",
       "name":  "List",
       "title": "列表",
