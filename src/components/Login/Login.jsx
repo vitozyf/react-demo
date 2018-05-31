@@ -17,7 +17,7 @@ class Login extends Component {
   }
 
   componentDidMount () {
-    console.log('123', this)
+
   }
   render (h) {
     // const ref = React.createRef();

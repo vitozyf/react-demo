@@ -3,12 +3,21 @@ import Component from  'utils/Component'
 import Login from './Login/index'
 import AboutOur from './AboutOur'
 import { Button  } from 'antd';
+import Counter from 'components/Counter/Counter'
+import createStore from 'src/store/index'
+// import { createStore } from 'redux'
+// import counter from 'src/store/reducers'
+
+const store = createStore()
+
 class Home extends Component {
   constructor (props) {
     super(props)
     this.state = {
       userName: '',
-      password: ''
+      password: '',
+      count: 0,
+      user: store.getState().users.isFetching + ''
     }
 
     this.myRef = React.createRef();
@@ -22,21 +31,37 @@ class Home extends Component {
   }
 
   clickHandler = () => {
-    console.log(this.myRef.current)
-    // console.log(this.myRef2, this.myRef2.current)
+    store.dispatch({ type: 'INCREMENT' })
+    console.log(this)
   }
+  
+  componentWillMount () {
+    store.subscribe(() => {
+      console.log('subscribe', store.getState())
+      this.setState({
+        count: store.getState().count,
+        user: store.getState().users.isFetching + ''
+      })
+    })
+  }
+  
 
   render () {
     // const ref = React.createRef();
     return (
       <div>
-        <Button onClick = { this.clickHandler } >首页</Button>
+        <Counter
+          value={this.state.count}
+          onIncrement={this.clickHandler}
+          onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
+        />
+        <Button onClick={() => {store.dispatch({ type: 'CHANGEUSER'} )}}>首页{this.state.user}</Button>
         <div ref = { this.myRef2 }>123</div>
         <Login ref = {this.myRef} title={123} age = {`false`} element = {AboutOur}></Login>
       </div>
-      
     )
   }
+
 }
 
 export default Home
