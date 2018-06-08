@@ -34,6 +34,12 @@ class Home extends Component {
     store.dispatch({ type: 'INCREMENT' })
     console.log(this)
   }
+
+  componentDidMount () {
+    const { store } = this.context;
+
+    console.log(123, store, this)
+  }
   
   componentWillMount () {
     store.subscribe(() => {
